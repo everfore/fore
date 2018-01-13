@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/otiai10/gosseract"
+	"github.com/toukii/gosseract"
 
 	"os"
 	"runtime/pprof"
@@ -18,7 +18,9 @@ func main() {
 	client := gosseract.NewClient()
 	defer client.Close()
 	// client.SetImage("timg.jpg")
-	client.SetImage("text.png")
+	client.SetLanguage("chi_sim")
+	client.SetImage("ocr.png")
+	// client.SetImage("text.png")
 	text, _ := client.Text()
 	fmt.Println(text)
 	// Hello, World!
